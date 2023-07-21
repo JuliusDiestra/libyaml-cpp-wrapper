@@ -9,4 +9,12 @@ YamlParser::~YamlParser() {
     yaml_parser_delete(&parser_);
 }
 
-
+bool YamlParser::Read(const char* file_path) {
+    //std::cout << "Current path : " << std::filesystem::current_path() << "\n";
+    FILE* file_ = fopen(file_path,"rb");
+    bool open_file_status{false};
+    if (file_ != nullptr) {
+        open_file_status = true;
+    }
+    return open_file_status;
+}

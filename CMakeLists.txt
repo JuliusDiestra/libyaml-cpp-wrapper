@@ -17,3 +17,9 @@ target_link_libraries(${PROJECT_NAME}
     /usr/local/lib/libyaml.a
 )
 
+include(CTest)
+if (BUILD_TESTING)
+    enable_testing()
+    add_subdirectory(test)
+endif()
+
