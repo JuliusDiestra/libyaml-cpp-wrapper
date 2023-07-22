@@ -11,9 +11,13 @@ class YamlParser {
   public:
     YamlParser();
     ~YamlParser();
-    bool Read(const char* file_path);
+    bool OpenFile(const std::string& file_path);
+    bool CloseFile();
+    bool IsFileEmpty();
+    bool Read();
 
   private:
+    FILE* file_;
     yaml_parser_t parser_;
     yaml_event_t event_;
 };

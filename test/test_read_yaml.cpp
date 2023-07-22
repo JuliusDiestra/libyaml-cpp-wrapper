@@ -3,10 +3,11 @@
 
 #include "yaml_parser.hpp"
 
-TEST(ReadYaml, read_yaml_01) {
+TEST(ReadYaml, open_file_01) {
     YamlParser yaml_parser_;
-    const char* file_path = "../../test/test_yaml.yaml";
-    bool read_status = yaml_parser_.Read(file_path);
-    EXPECT_TRUE(read_status);
+    std::string file_path = "../../test/test_yaml.yaml";
+    bool open_file_status = yaml_parser_.OpenFile(file_path);
+    EXPECT_TRUE(open_file_status);
+    EXPECT_FALSE(yaml_parser_.IsFileEmpty());
 }
 
