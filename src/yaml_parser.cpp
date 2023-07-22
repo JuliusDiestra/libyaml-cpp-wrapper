@@ -7,6 +7,7 @@ YamlParser::YamlParser() {
 
 YamlParser::~YamlParser() {
     yaml_parser_delete(&parser_);
+    CloseFile();
 }
 
 bool YamlParser::OpenFile(const std::string& file_path) {
