@@ -5,7 +5,6 @@
 #include "yaml.h"
 #include <iostream>
 #include <string>
-#include <filesystem>
 
 class YamlParser {
   public:
