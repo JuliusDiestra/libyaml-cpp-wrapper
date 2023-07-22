@@ -20,6 +20,15 @@ jobs:
           cmake ..
           make
           sudo make install
+      - name: Install libyaml
+        run: |
+          git clone -q https://github.com/yaml/libyaml.git
+          cd libyaml
+          git checkout 0.2.5
+          ./bootstrap
+          ./configure
+          make
+          sudo make install
       - name: Build Project
         run: |
           rm -rf build
