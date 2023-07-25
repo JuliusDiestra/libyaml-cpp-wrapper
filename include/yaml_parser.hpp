@@ -3,13 +3,11 @@
 #define YAML_PARSER_HPP_
 
 #include <iostream>
-#include <string>
 #include <memory>
-
-
-#include "yaml.h"
+#include <string>
 
 #include "file_unique_ptr.hpp"
+#include "yaml.h"
 
 class YamlParser {
   public:
