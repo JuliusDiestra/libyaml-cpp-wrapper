@@ -4,8 +4,12 @@
 
 #include <iostream>
 #include <string>
+#include <memory>
+
 
 #include "yaml.h"
+
+#include "file_unique_ptr.hpp"
 
 class YamlParser {
   public:
@@ -13,11 +17,10 @@ class YamlParser {
     ~YamlParser();
     bool OpenFile(const std::string& file_path);
     bool CloseFile();
-    bool IsFileEmpty();
     bool Read();
 
   private:
-    FILE* file_;
+    std::unique_ptr<FILE, file::pointer_deleter> file_;
     yaml_parser_t parser_;
     yaml_event_t event_;
 };
